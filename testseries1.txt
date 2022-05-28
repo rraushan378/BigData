@@ -1,0 +1,78 @@
+1. Create DataFrames by using ddl 
+
+Given the data sets of json as well as csv , how will you read it as a ddl and by not inferring schema
+
+Datasets : 
+
+	Customer.json
+	web_sales.csv
+
+2. How will you inferschema while reading the dataset using struct field 
+
+3. Dataframe manipulation 
+Cast address_id to longtype
+cast birthdate to stringtype
+
+Select demographics.income_range[0] by casting it to double and take alias name as lowerBound and select address_id by casting it to string
+
+find the column size of the customer dataframe
+
+Add a column fullname to customerDF by giving "address_id + 1"
+
+
+4. Select "ws_order_number","ws_item_sk",  "ws_quantity","ws_net_paid", "ws_net_profit","ws_wholesale_cost" in a new dataframe called as salesStatDf
+from webSalesDf which comes from web_sales.csv 
+
+5. Add columns to salesStatDf
+	expected_net_paid as ws_quantity*ws_wholesale_cost
+	calculated_profit as ws_net_paid-expected_net_paid
+	unit_price as ws_wholesale_cost / ws_quantity
+	rounded_unitPrice as unit_price rounded up to 2
+	brounded_unitPrice as brounded_unitPrice brounded up to 3
+
+6. Add columns to df - customerDf
+by renaming "email_address"to "mail"
+Adding "developer_site" column by giving default value as insightahead.com"
+drop birth_country and address_id columns
+and filter dayofmonth in birthdate < 20 from the customerDf
+
+
+7. Create df filtered from  customerDf by having condition year(birthdate) > 1980 and month as january and day of birthdate > 15 and birth_country is not UNITED STATES,
+And select the firstname,lastname,birthdate,birth_country
+
+
+8.Create dataframe with columns id,name with id as no in the week and the corresponding day 
+
+Ex : 1 -> Monday
+	...
+	...
+     7 -> Sunday
+
+9. From CustomerDF select salutation column count with null
+
+10.  From CustomerDF select salutation column count with not null
+
+11. Drop with 2 types-> all and any 
+
+12. How to fill na element with the below 
+
+"salutation" -> "UNKNOWN",
+"firstname" -> "John",
+ "lastname" -> "Doe", 
+"birthyear" -> 9999
+
+13. Sort customerDF -> firstname,lastname in desc
+
+14 . Find the behavior of customerPurchase from the above mentioned dattaframe
+
+15 . CustomerPurchases grouped on customer_id and aggregate on count(item_id)
+
+16 Aggregate on ws_sales_price 
+min,max,avg,mean,count
+
+17. Describe,summary,printShcmea on dataframework
+ 	
+18. Join customerDf,addressDf based on address_id , get matching data by inner join
+
+19,join customerDf,webSalesDf where customer is not null
+
